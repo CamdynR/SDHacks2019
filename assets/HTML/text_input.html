@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="../CSS/text_input.css">
 
   <!-- JavaScript -->
+  <script src="../../secretKeys.js"></script>
+  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.556.0.min.js"></script>
+  <script src="../JS/aws-sdk-2.556.0.js"></script>
   <script src="../JS/index.js"></script>
 </head>
 
@@ -23,13 +26,14 @@
 
   <main>
     <div id="mainBodyGrid">
-      <form onsubmit="testMethod()">
+      <form onsubmit="parseText(event)">
         <textarea id="userInput" placeholder="Type your text here..." onfocus="this.placeholder = ''"
           onblur="this.placeholder = 'Type your text here...'" spellcheck="false"></textarea>
         <input type="submit" value="Submit">
       </form>
     </div>
   </main>
+
 </body>
 
 </html>
