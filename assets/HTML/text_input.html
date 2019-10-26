@@ -23,8 +23,11 @@
 
   <main>
     <div id="mainBodyGrid">
-      <textarea id="userInput" placeholder="Type your text here..." onfocus="this.placeholder = ''"
-        onblur="this.placeholder = 'Type your text here...'" spellcheck="false"></textarea>
+      <form onsubmit="testMethod()">
+        <textarea id="userInput" placeholder="Type your text here..." onfocus="this.placeholder = ''"
+          onblur="this.placeholder = 'Type your text here...'" spellcheck="false"></textarea>
+        <input type="submit" value="Submit">
+      </form>
     </div>
   </main>
 </body>
