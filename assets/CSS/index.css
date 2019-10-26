@@ -1,1 +1,44 @@
 /* Main Stylesheet */
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+input:active, 
+input:focus,
+textarea:active,
+textarea:focus {
+  outline: none;
+}
+
+#mainBodyGrid {
+  align-items: center;
+  display: grid;
+  grid-template-areas: "center";
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  height: 90vh;
+  justify-items: center;
+  position: relative;
+  width: 100%;
+}
+
+#userInput {
+  border-radius: 10px;
+  font-size: 1.5rem;
+  grid-area: "center";
+  height: 400px;
+  padding: 10px;
+  width: 600px;
+}
+
+#userInput:focus,
+#userInput:hover {
+  border-color: red;
+}
+
+#userInput:hover {
+  cursor: pointer;
+}
