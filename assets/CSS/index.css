@@ -11,61 +11,92 @@ body {
 }
 
 header h1 {
-  color: black;
+  font-size: 4rem;
   left: 50%;
-  margin-left: -175px;
+  margin: 50px 0 0 -141px;
   position: absolute;
-  top: 125px;
-  width: 350px;
+  width: 282px;
 }
 
-input:active, 
-input:focus,
-textarea:active,
-textarea:focus {
-  outline: none;
+header a {
+  background-color: white;
+  border-radius: 10px;
+  color: rgb(68, 68, 68);
+  display: block;
+  height: 20px;
+  left: 50%;
+  margin: 130px 0 0 -60px;
+  padding: 5px 0 5px 0;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s all ease;
+  width: 120px;
 }
 
-.inputLinkLow {
+header a:hover {
+  transition: 0.3 all ease;
+  transform: scale(1.05);
+}
+
+hr {
+  background-color: black;
+  border: none;
+  color: black;
+  height: 2px;
+  margin: 10px 0;
+}
+
+main {
+  align-items: center;
+  display: grid;
+  grid-template-areas: "center";
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  height: 80vh;
+  justify-items: center;
+  width: 100%;
+}
+
+ul {
+  list-style-type:none
+}
+
+.lowerItems {
   margin-top: 30px;
 }
 
-#inputLinksDiv {
-  grid-area: centerLinks;
-}
-
-#inputLinksDiv a {
-  background-color: rgb(255, 255, 255, 0.75);
-  border-radius: 10px;
-  color: black;
-  display: block;
-  font-size: 1.3rem;
-  height: 35px;
-  padding: 12px 0 5px 0;
-  text-decoration: none;
-  transition: 0.6s all ease;
-  width: 260px;
-}
-
-#inputLinksDiv a:hover {
-  background-color: #FFF;
-  color: black;
-  transform: scale(1.05);
-  transition: 0.4s all ease;
-}
-
-#inputLinkTop {
-  margin-top: 110px;
-}
-
-#mainContentGrid {
-  align-items: center;
-  display: grid;
-  grid-template-areas: "centerLinks";
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  height: 100vh;
-  justify-items: center;
-  text-align: center;
+#mainContent {
+  grid-area: center;
+  margin-top: 170px;
   width: 100%;
+}
+
+#mainContent h2 {
+  font-size: 2.3rem;
+  margin-left: 20px;
+}
+
+#setList {
+  text-align: center;
+  margin: 60px auto 0 auto;
+  width: 800px;
+}
+
+#setList a {
+  background-color: white;
+  border-radius: 10px;
+  color: rgb(54, 54, 54);
+  display: block;
+  font-size: 1.4rem;
+  height: 50px;
+  padding: 20px 0 0 0;
+  text-decoration: none;
+  transition: 0.3s all ease;
+  width: 800px;
+}
+
+#setList a:hover {
+  transform: scale(1.05);
+  transition: 0.3s all ease;
 }
