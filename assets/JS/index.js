@@ -45,7 +45,7 @@ function generateQuiz(userInput, data) {
   var quizText = '';
   var prevLoc = 0;
   for(let i = 0; i < toRemoveKeys.length; i++) {
-    quizText = quizText.concat(userInput.substr(prevLoc, entries[toRemoveKeys[i]].BeginOffset - prevLoc), '(', ''+(i+1), ')________');
+    quizText = quizText.concat(userInput.substr(prevLoc, entries[toRemoveKeys[i]].BeginOffset - prevLoc), '(', ''+(i+1), ')<input type="text" class="userGuess">');
     prevLoc = entries[toRemoveKeys[i]].EndOffset;
   }
 
