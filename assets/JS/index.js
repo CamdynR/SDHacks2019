@@ -18,8 +18,37 @@ function parseText(event) {
     Text: userInput
   };
 
-  comprehend.detectKeyPhrases(parseParams, function (err, data) {
+  comprehend.detectEntities(parseParams, function(err, data) {
     if (err) console.log(err, err.stack);
-    else console.log(data);
+    else generateQuiz(userInput, data);
   });
+
+}
+
+function generateQuiz(userInput, data) {
+  console.log(data);
+
+  var entries = data['Entities'];
+  var toRemove = [];
+  var toRemoveKeys = [];
+
+  // Select all 'LOCATION' types from the data
+  // Store text and key in data object
+  for(key in entries) {
+    if(entries[key].Type === 'LOCATION') {
+      toRemove.push(entries[key].Text);
+      toRemoveKeys.push(key);
+    }
+  }
+
+  // Generate new paragraph with removed words
+  var quizText = '';
+  var prevLoc = 0;
+  for(let i = 0; i < toRemoveKeys.length; i++) {
+    quizText = quizText.concat(userInput.substr(prevLoc, entries[toRemoveKeys[i]].BeginOffset - prevLoc), '(', ''+(i+1), ')________');
+    prevLoc = entries[toRemoveKeys[i]].EndOffset;
+  }
+
+  var returnObject = { "Questions": quizText, "Answers": toRemove };
+
 }
