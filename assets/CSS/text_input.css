@@ -1,5 +1,22 @@
 /* CSS For Text_Input.html */
 
+header h1 {
+  margin-left: -100px;
+  text-align: center;
+  top: 40px;
+  width: 200px;
+}
+
+nav a {
+  color: black;
+  font-size: 1.4rem;
+  left: 10px;
+  position: absolute;
+  text-decoration: none;
+  top: 10px;
+  z-index: 2;
+}
+
 #mainBodyGrid {
   align-items: center;
   display: grid;
@@ -13,17 +30,23 @@
 }
 
 #userInput {
+  background-color: rgb(255, 255, 255, 0.85);
+  border: none;
   border-radius: 10px;
   font-size: 1.5rem;
   grid-area: "center";
   height: 400px;
-  padding: 10px;
+  margin-top: 90px;
+  padding: 15px;
+  transition: 0.4s all ease;
   width: 600px;
 }
 
 #userInput:focus,
 #userInput:hover {
-  border-color: red;
+  background-color: white;
+  transform: scale(1.05);
+  transition: 0.4s all ease;
 }
 
 #userInput:hover {
