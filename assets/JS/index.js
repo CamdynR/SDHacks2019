@@ -11,10 +11,13 @@ var comprehend = new AWS.Comprehend({ apiVersion: '2017-11-27' });
 function parseText(event) {
   event.preventDefault();
 
+  const userInput = document.getElementById('userInput').value;
+
   var parseParams = {
     LanguageCode: 'en',
-    Text: 'My name is Camdyn'
+    Text: userInput
   };
+
   comprehend.detectKeyPhrases(parseParams, function (err, data) {
     if (err) console.log(err, err.stack);
     else console.log(data);
