@@ -1,0 +1,81 @@
+/* Create Set Stylesheet */
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #FCBF49;
+}
+
+header h1 {
+  color: black;
+  left: 50%;
+  margin-left: -141px;
+  position: absolute;
+  top: 125px;
+  width: 282px;
+}
+
+input:active, 
+input:focus,
+textarea:active,
+textarea:focus {
+  outline: none;
+}
+
+nav a {
+  color: black;
+  font-size: 1.4rem;
+  left: 10px;
+  position: absolute;
+  text-decoration: none;
+  top: 10px;
+  z-index: 2;
+}
+
+.inputLinkLow {
+  margin-top: 30px;
+}
+
+#inputLinksDiv {
+  grid-area: centerLinks;
+}
+
+#inputLinksDiv a {
+  background-color: rgb(255, 255, 255, 0.75);
+  border-radius: 10px;
+  color: black;
+  display: block;
+  font-size: 1.3rem;
+  height: 35px;
+  padding: 12px 0 5px 0;
+  text-decoration: none;
+  transition: 0.6s all ease;
+  width: 260px;
+}
+
+#inputLinksDiv a:hover {
+  background-color: #FFF;
+  color: black;
+  transform: scale(1.05);
+  transition: 0.4s all ease;
+}
+
+#inputLinkTop {
+  margin-top: 110px;
+}
+
+#mainContentGrid {
+  align-items: center;
+  display: grid;
+  grid-template-areas: "centerLinks";
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  height: 100vh;
+  justify-items: center;
+  text-align: center;
+  width: 100%;
+}

@@ -3,30 +3,27 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>SD Hacks 2019</title>
+  <title>QuizWiz</title>
 
   <!-- CSS -->
   <link rel="stylesheet" href="assets/CSS/index.css">
-
-  <!-- JavaScript -->
-  <script src="assets/JS/index.js"></script>
-  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.556.0.min.js"></script>
 </head>
 
 <body>
   <header>
-    <h1>[ Temp Title Name ]</h1>
+    <h1>QuizWiz</h1>
+    <a href="assets/HTML/create_set.html">Create</a>
   </header>
 
   <main>
-    <div id="mainContentGrid">
-      <div id="inputLinksDiv">
-        <a href="assets/HTML/file_input.html" accesskey="f" id="inputLinkTop">File Input</a>
-        <br>
-        <a href="assets/HTML/text_input.html" accesskey="t" class="inputLinkLow">Text Input</a>
-        <br>
-        <a href="assets/HTML/voice_input.html" accesskey="v" class="inputLinkLow">Voice Input</a>
-      </div>
+    <div id="mainContent">
+      <h2>Current Sets</h2>
+      <hr>
+      <ul id="setList">
+        <li><a href="">This is the first set</a></li>
+        <li><a href="" class="lowerItems">This is the second set</a></li>
+        <li><a href="" class="lowerItems">This is the third set</a></li>
+      </ul>
     </div>
   </main>
 </body>
