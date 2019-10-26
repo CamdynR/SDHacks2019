@@ -23,3 +23,8 @@ function parseText(event) {
     else console.log(data);
   });
 }
+
+function linkUser(event) {
+  event.preventDefault();
+  window.location.href = 'output.html';
+}
