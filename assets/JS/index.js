@@ -48,13 +48,8 @@ function generateQuiz(userInput, data) {
   // Generate new paragraph with removed words
   var quizText = '';
   var prevLoc = 0;
-<<<<<<< HEAD
-  for(let i = 0; i < toRemoveKeys.length; i++) {
-    quizText = quizText.concat(userInput.substr(prevLoc, entries[toRemoveKeys[i]].BeginOffset - prevLoc), '(', ''+(i+1), ')<input type="text" class="userGuess" spellcheck="false">');
-=======
   for (let i = 0; i < toRemoveKeys.length; i++) {
     quizText = quizText.concat(userInput.substr(prevLoc, entries[toRemoveKeys[i]].BeginOffset - prevLoc), '(', '' + (i + 1), ') <input type="text" class="userGuess" spellcheck="false">');
->>>>>>> db83b259331f1fade4442b4a55f6040b8f9bf4dc
     prevLoc = entries[toRemoveKeys[i]].EndOffset;
   }
 
