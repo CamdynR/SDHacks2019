@@ -7,9 +7,10 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="../CSS/output.css">
-
-  <!-- Javascript -->
-  <script src="../JS/output.js"></script>
+  <script src="../../secretKeys.js"></script>
+  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.556.0.min.js"></script>
+  <script src="../JS/aws-sdk-2.556.0.js"></script>
+  <script src="../JS/index.js"></script>
 </head>
 
 <body>
@@ -19,10 +20,12 @@
 
   <main>
     <div id="testQuestions">
-      <form id="userQuestionForm" onsubmit="checkUserAnwers(event)">
-        <p id="generatedUserOutput"></p>
-        <button id="submitAnswers">Submit</button>
-      </form>
+      <p id="generatedUserOutput"></p>
+      <button id="submitAnswers">Submit</button>
+      <button class="btn default" onclick="readParagraph()">Read this to me</button>
+      <audio id="audioPlayback" controls>
+        <source id="audioSource" type="audio/mp3" src="">
+      </audio>
     </div>
     <div id="testAnswers">
       <h2>Answers</h2>
