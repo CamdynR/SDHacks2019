@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <title>title</title>
 
+  <!-- CSS -->
   <link rel="stylesheet" href="../CSS/output.css">
 </head>
 
@@ -15,33 +16,27 @@
 
   <main>
     <div id="testQuestions">
-      <p>Lorem ipsum dolor sit amet, consectetur (1) <input type="text" class="userGuess" spellcheck="false"> adipiscing
-        elit, sed do eiusmod
-        tempor incididunt
-        ut labore et dolore
-        (2) <input type="text" class="userGuess" spellcheck="false">
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip <input
-          type="text" class="userGuess" spellcheck="false"> ex ea commodo
-        consequat. Duis aute irure <input type="text" class="userGuess" spellcheck="false"> dolor in reprehenderit in
-        voluptate velit esse
-        cillum dolore eu
-        fugiat nulla
-        pariatur.
-        Excepteur sint occaecat <input type="text" class="userGuess" spellcheck="false"> cupidatat non proident, sunt in
-        culpa qui officia
-        deserunt mollit
-        anim id est laborum.
-      </p>
+      <p id="generatedUserOutput"></p>
+      <button id="submitAnswers">Submit</button>
     </div>
     <div id="testAnswers">
       <h2>Answers</h2>
-      <ol>
-        <li><span class="blurText">Answer 1</span></li>
-        <li><span class="blurText">Answer 2</span></li>
-        <li><span class="blurText">Answer 3</span></li>
-      </ol>
+      <ol id="generatedAnswerList"></ol>
     </div>
   </main>
+
+  <!-- Javascript -->
+  <script>
+    var userQuestions = window.localStorage.getItem("storedQuestions");
+    document.getElementById('generatedUserOutput').innerHTML = userQuestions;
+
+    var userAnswers = window.localStorage.getItem("storedAnswers");
+    var answerArray = userAnswers.split(",");
+
+    for (let i = 0; i < answerArray.length; i++) {
+      document.getElementById('generatedAnswerList').innerHTML += '<li><span class="blurText">' + answerArray[i] + '</span></li>';
+    }
+  </script>
 </body>
 
 </html>
