@@ -39,6 +39,16 @@ ol li {
   margin-top: 20px;
 }
 
+nav a {
+  color: black;
+  font-size: 2rem;
+  left: 10px;
+  position: absolute;
+  text-decoration: none;
+  top: 10px;
+  z-index: 2;
+}
+
 .blurText {
   filter: blur(5.5px);
   transition: 0.2s all ease;

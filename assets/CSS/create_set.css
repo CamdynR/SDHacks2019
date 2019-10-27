@@ -17,6 +17,7 @@ header h1 {
   position: absolute;
   top: 125px;
   width: 282px;
+  z-index: 21;
 }
 
 input:active, 
@@ -28,16 +29,28 @@ textarea:focus {
 
 nav a {
   color: black;
-  font-size: 1.4rem;
+  font-size: 2rem;
   left: 10px;
   position: absolute;
   text-decoration: none;
   top: 10px;
-  z-index: 2;
+  z-index: 25;
 }
 
 .inputLinkLow {
   margin-top: 30px;
+}
+
+#backgroundTile {
+  background-color: #fd890e;
+  border-radius: 20px;
+  height: 500px;
+  left: 50%;
+  margin-left: -250px;
+  position: absolute;
+  top: 70px;
+  width: 500px;
+  z-index: 1;
 }
 
 #inputLinksDiv {
@@ -76,6 +89,8 @@ nav a {
   grid-template-rows: 1fr;
   height: 100vh;
   justify-items: center;
+  position: relative;
   text-align: center;
   width: 100%;
+  z-index: 20;
 }
