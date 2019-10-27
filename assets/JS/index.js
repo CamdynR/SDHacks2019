@@ -18,11 +18,15 @@ function parseText(event) {
     Text: userInput
   };
 
-  comprehend.detectEntities(parseParams, function(err, data) {
+  comprehend.detectEntities(parseParams, function (err, data) {
     if (err) console.log(err, err.stack);
     else generateQuiz(userInput, data);
   });
+}
 
+function linkUser(event) {
+  event.preventDefault();
+  window.location.href = 'output.html';
 }
 
 function generateQuiz(userInput, data) {
@@ -34,8 +38,8 @@ function generateQuiz(userInput, data) {
 
   // Select all 'LOCATION' types from the data
   // Store text and key in data object
-  for(key in entries) {
-    if(entries[key].Type === 'LOCATION') {
+  for (key in entries) {
+    if (entries[key].Type === 'LOCATION') {
       toRemove.push(entries[key].Text);
       toRemoveKeys.push(key);
     }
@@ -44,11 +48,20 @@ function generateQuiz(userInput, data) {
   // Generate new paragraph with removed words
   var quizText = '';
   var prevLoc = 0;
+<<<<<<< HEAD
   for(let i = 0; i < toRemoveKeys.length; i++) {
     quizText = quizText.concat(userInput.substr(prevLoc, entries[toRemoveKeys[i]].BeginOffset - prevLoc), '(', ''+(i+1), ')<input type="text" class="userGuess" spellcheck="false">');
+=======
+  for (let i = 0; i < toRemoveKeys.length; i++) {
+    quizText = quizText.concat(userInput.substr(prevLoc, entries[toRemoveKeys[i]].BeginOffset - prevLoc), '(', '' + (i + 1), ') <input type="text" class="userGuess" spellcheck="false">');
+>>>>>>> db83b259331f1fade4442b4a55f6040b8f9bf4dc
     prevLoc = entries[toRemoveKeys[i]].EndOffset;
   }
 
-  var returnObject = { "Questions": quizText, "Answers": toRemove };
+  // var returnObject = { "Questions": quizText, "Answers": toRemove };
 
+  window.localStorage.setItem("storedQuestions", quizText);
+  window.localStorage.setItem("storedAnswers", toRemove);
+
+  window.location.href = 'output.html';
 }

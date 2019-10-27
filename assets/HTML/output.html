@@ -5,11 +5,38 @@
   <meta charset="UTF-8">
   <title>title</title>
 
+  <!-- CSS -->
   <link rel="stylesheet" href="../CSS/output.css">
 </head>
 
 <body>
+  <header>
+    <h1>Quiz Yourself!</h1>
+  </header>
 
+  <main>
+    <div id="testQuestions">
+      <p id="generatedUserOutput"></p>
+      <button id="submitAnswers">Submit</button>
+    </div>
+    <div id="testAnswers">
+      <h2>Answers</h2>
+      <ol id="generatedAnswerList"></ol>
+    </div>
+  </main>
+
+  <!-- Javascript -->
+  <script>
+    var userQuestions = window.localStorage.getItem("storedQuestions");
+    document.getElementById('generatedUserOutput').innerHTML = userQuestions;
+
+    var userAnswers = window.localStorage.getItem("storedAnswers");
+    var answerArray = userAnswers.split(",");
+
+    for (let i = 0; i < answerArray.length; i++) {
+      document.getElementById('generatedAnswerList').innerHTML += '<li><span class="blurText">' + answerArray[i] + '</span></li>';
+    }
+  </script>
 </body>
 
 </html>
