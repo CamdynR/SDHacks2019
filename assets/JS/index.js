@@ -49,12 +49,11 @@ function generateQuiz(userInput, data) {
   var quizText = '';
   var prevLoc = 0;
   for (let i = 0; i < toRemoveKeys.length; i++) {
-    quizText = quizText.concat(userInput.substr(prevLoc, entries[toRemoveKeys[i]].BeginOffset - prevLoc), '(', '' + (i + 1), ') <input name="answer' + (i + 1) + '" id="userAnswer' + (i + 1) + '" type="text" class="userGuess" spellcheck="false">');
+    quizText = quizText.concat(userInput.substr(prevLoc, entries[toRemoveKeys[i]].BeginOffset - prevLoc), '(', '' + (i + 1), ') <input name="answer' + (i + 1) + '" id="userAnswer' + (i + 1) + '" type="text" class="userGuess" spellcheck="false" autocomplete="off">');
     prevLoc = entries[toRemoveKeys[i]].EndOffset;
   }
 
-  // var returnObject = { "Questions": quizText, "Answers": toRemove };
-
+  window.localStorage.clear();
   window.localStorage.setItem("storedQuestions", quizText);
   window.localStorage.setItem("storedAnswers", toRemove);
 

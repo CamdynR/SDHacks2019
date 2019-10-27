@@ -10,6 +10,11 @@ body {
   background-color: #FCBF49;
 }
 
+header {
+  position: relative;
+  z-index: 3;
+}
+
 header img {
   left: 50%;
   margin: 20px 0 0 -110px;
@@ -18,22 +23,25 @@ header img {
 }
 
 header a {
-  background-color: white;
+  background-color: #fd890e;
   border-radius: 10px;
-  color: rgb(68, 68, 68);
+  color: white;
   display: block;
-  height: 20px;
+  font-size: 1.3rem;
+  height: 30px;
   left: 50%;
-  margin: 190px 0 0 -60px;
-  padding: 5px 0 5px 0;
+  margin: 190px 0 0 -87.5px;
+  padding: 5px 15px 5px 0;
   position: absolute;
   text-align: center;
   text-decoration: none;
   transition: 0.3s all ease;
-  width: 120px;
+  width: 160px;
+  z-index: 7 !important;
 }
 
 header a:hover {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
   transition: 0.3 all ease;
   transform: scale(1.05);
 }
@@ -55,6 +63,7 @@ main {
   height: 80vh;
   justify-items: center;
   width: 100%;
+  z-index: 2;
 }
 
 ul {
@@ -63,6 +72,44 @@ ul {
 
 .lowerItems {
   margin-top: 30px;
+}
+
+#backgroundColorSection {
+  background-color: white;
+  height: 255px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+#folderTab {
+  background-color: #FCBF49;
+  border-top-right-radius: 25px;
+  height: 70px;
+  margin: -50px 0 0 0px;
+  position: absolute;
+  width: 300px;
+  z-index: 4;
+}
+
+#folderTabBR {
+  background-color: #FCBF49;
+  height: 25px;
+  margin: -15px 0 0 290px;
+  position: absolute;
+  width: 40px;
+  z-index: 4;
+}
+
+#folderTabWhite {
+  background-color: white;
+  border-bottom-left-radius: 25px;
+  height: 25px;
+  margin: -15px 0 0 300px;
+  position: absolute;
+  width: 40px;
+  z-index: 4;
 }
 
 #mainContent {
@@ -74,6 +121,9 @@ ul {
 #mainContent h2 {
   font-size: 2.3rem;
   margin-left: 20px;
+  position: relative;
+  width: 300px;
+  z-index: 5;
 }
 
 #setList {
@@ -83,9 +133,9 @@ ul {
 }
 
 #setList a {
-  background-color: white;
+  background-color: #fd890e;
   border-radius: 10px;
-  color: rgb(54, 54, 54);
+  color: white;
   display: block;
   font-size: 1.4rem;
   height: 50px;
@@ -96,6 +146,7 @@ ul {
 }
 
 #setList a:hover {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
   transform: scale(1.05);
   transition: 0.3s all ease;
 }
