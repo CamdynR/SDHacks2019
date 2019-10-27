@@ -6,7 +6,7 @@ AWS.config.credentials = new AWS.Credentials();
 AWS.config.credentials.accessKeyId = keyA;
 AWS.config.credentials.secretAccessKey = keyS;
 
-var comprehend = new AWS.Comprehend({ apiVersion: '2017-11-27' });
+var comprehend = new AWS.Comprehend({apiVersion: '2017-11-27'});
 
 function parseText(event) {
   event.preventDefault();
@@ -59,4 +59,25 @@ function generateQuiz(userInput, data) {
   window.localStorage.setItem("storedAnswers", toRemove);
 
   window.location.href = 'output.html';
+}
+
+function readParagraph() {
+  var speechParams = {
+    OutputFormat: "mp3",
+    SampleRate: "16000",
+    Text: "",
+    TextType: "text",
+    VoiceId: "Matthew"
+  };
+  speechParams.Text = document.getElementById('generatedUserOutput').value;
+  var polly = new AWS.Polly({apiVersion: '2016-06-10'});
+  var signer = new AWS.Polly.Presigner(speechParams, polly);
+
+  signer.getSynthesizeSpeechUrl(speechParams, function(error, url) {
+    if (error) {
+    } else {
+        document.getElementById('audioSource').src = url;
+        document.getElementById('audioPlayback').load();
+    }
+  });
 }
